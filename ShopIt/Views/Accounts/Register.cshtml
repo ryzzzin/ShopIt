@@ -1,0 +1,42 @@
+﻿@model RegisterRequest
+
+@{ ViewData["Title"] = "Register Page"; }
+
+<style>
+    label, .submitbtn {
+        margin-top: 10px;
+    }
+
+    .form-control {
+        width: 300px;
+    }
+
+    .btn {
+        width: 150px;
+    }
+</style>
+
+<div class="container">
+    <h2>Register</h2>
+    <form class="form-group" asp-controller="Accounts" asp-action="Register" method="post">
+        <div>
+            <label asp-for="UserName"></label>
+            <input type="text" asp-for="UserName" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            <input type="email" asp-for="Email" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="PasswordConfirmation"></label>
+            <input type="password" asp-for="PasswordConfirmation" class="form-control" />
+        </div>
+        <div class="submitbtn">
+            <input type="submit" value="Register" class="btn btn-success" />
+        </div>
+    </form>
+</div>

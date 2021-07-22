@@ -1,8 +1,19 @@
-﻿@{
+﻿@model IEnumerable<ShopIt.Models.Entities.Product>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    @foreach (var product in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@product.Title</h5>
+                <p class="card-text">@product.Category</p>
+                <p class="card-text">@product.Description</p>
+                <button class="btn btn-block">@product.Price</button>
+            </div>
+        </div>
+    }
 </div>

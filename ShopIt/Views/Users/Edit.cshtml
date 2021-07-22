@@ -1,0 +1,23 @@
+﻿@model ShopIt.Models.AdminModels.EditUserRequest
+
+@{
+    ViewBag.Title = "Edit user";
+}
+
+<form asp-controller="Users" asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Id">
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input type="email" asp-for="Email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="UserName" class="control-label"></label>
+        <input type="text" asp-for="UserName" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save changes" class="btn btn-link">
+    </div>
+</form>

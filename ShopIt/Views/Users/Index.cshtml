@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ShopIt.Models.Entities.ApplicationUser>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<a asp-action="Create" class="btn btn-link">Add new user</a>
+
+<table class="table">
+    <tr>
+        <th>Email</th>
+        <th></th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@user.Id" method="post">
+                    <a class="btn btn-sm btn-link" asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                    <a class="btn btn-sm btn-link" asp-action="ChangePassword" asp-route-id="@user.Id">Change password</a>
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
