@@ -1,0 +1,38 @@
+﻿@model LoginRequest
+
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<style>
+    label, .submitbtn {
+        margin-top: 10px;
+    }
+    .form-control {
+        width: 300px;
+    }
+    .btn{
+        width: 150px;
+    }
+</style>
+
+<div class="container">
+    <h2>Login</h2>
+    <form class="form-group"  asp-controller="Accounts" asp-action="Login" method="post">
+        <div>
+            <label asp-for="Email"></label>
+            <input type="email" asp-for="Email" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" class="form-control" />
+        </div>
+        <div>
+            <label asp-for="RememberMe"></label>
+            <input asp-for="RememberMe">
+        </div>
+        <div class="submitbtn">
+            <input type="submit" value="Login" class="btn btn-success" />
+        </div>
+    </form>
+</div>
