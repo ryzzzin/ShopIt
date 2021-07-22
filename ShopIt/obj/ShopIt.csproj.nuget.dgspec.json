@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\ryzzzin\\source\\repos\\ShopIt\\ShopIt\\ShopIt.csproj": {}
+    "C:\\Users\\User\\Desktop\\ASP.NET Core курс\\ShopIt\\ShopIt\\ShopIt.csproj": {}
   },
   "projects": {
-    "D:\\Users\\ryzzzin\\source\\repos\\ShopIt\\ShopIt\\ShopIt.csproj": {
+    "C:\\Users\\User\\Desktop\\ASP.NET Core курс\\ShopIt\\ShopIt\\ShopIt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\ryzzzin\\source\\repos\\ShopIt\\ShopIt\\ShopIt.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\ASP.NET Core курс\\ShopIt\\ShopIt\\ShopIt.csproj",
         "projectName": "ShopIt",
-        "projectPath": "D:\\Users\\ryzzzin\\source\\repos\\ShopIt\\ShopIt\\ShopIt.csproj",
-        "packagesPath": "C:\\Users\\ryzzzin\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\ryzzzin\\source\\repos\\ShopIt\\ShopIt\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\ASP.NET Core курс\\ShopIt\\ShopIt\\ShopIt.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\ASP.NET Core курс\\ShopIt\\ShopIt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ryzzzin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
