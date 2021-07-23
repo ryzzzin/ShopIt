@@ -1,0 +1,16 @@
+﻿@model ShopIt.Models.Entities.Category
+
+@{
+    ViewData["Title"] = "Category creation";
+}
+
+<form asp-controller="Categories" asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input type="text" asp-for="Title" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create new category" class="btn btn-link">
+    </div>
+</form>

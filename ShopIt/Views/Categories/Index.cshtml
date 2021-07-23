@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ShopIt.Models.Entities.Category>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+<a asp-action="Create" class="btn btn-link">Create new category</a>
+
+<table class="table">
+    <tr>
+        <th>Categories</th>
+        <th></th>
+    </tr>
+    @foreach (var category in Model)
+    {
+        <tr>
+            <td>@category.Title</td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@category.Id" method="post">
+                    <a class="btn btn-sm btn-link" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
