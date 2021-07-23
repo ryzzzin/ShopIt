@@ -8,8 +8,6 @@ namespace ShopIt.Models.AdminModels
 {
     public class CreateCategoryRequest
     {
-        [Required(ErrorMessage = "Id field is required")]
-        public int Id { get; set; }
         [Required(ErrorMessage = "Title field is required")]
         public string Title { get; set; }
         
