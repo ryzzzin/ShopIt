@@ -461,9 +461,6 @@ namespace ShopIt.Migrations
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("OrderId1")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
@@ -473,8 +470,6 @@ namespace ShopIt.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
-
-                    b.HasIndex("OrderId1");
 
                     b.HasIndex("ProductId");
 
@@ -756,15 +751,9 @@ namespace ShopIt.Migrations
 
             modelBuilder.Entity("ShopIt.Models.Entities.OrderedProducts", b =>
                 {
-                    b.HasOne("ShopIt.Models.Entities.ApplicationUser", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ShopIt.Models.Entities.Order", null)
+                    b.HasOne("ShopIt.Models.Entities.Order", "Order")
                         .WithMany("OrderedProducts")
-                        .HasForeignKey("OrderId1")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
