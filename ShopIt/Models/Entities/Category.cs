@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopIt.Models.Entities
 {
-    public class Category : BaseEntity<Guid>
+    public class Category : BaseEntity<int>
     {
         [Required]
         public string Title { get; set; }
