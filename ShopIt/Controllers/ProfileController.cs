@@ -33,7 +33,7 @@ namespace ShopIt.Controllers
             var user = await _userManager.GetUserAsync(User);
             var userPic =_context.UserPics.Where(x=>x.UserId==user.Id);
             model = new ShowImageRequest();
-            if(userPic is not null)
+            if(userPic.FirstOrDefault() is not null)
             {
                 model.Path = userPic.FirstOrDefault().Path;
                 return View(model);
