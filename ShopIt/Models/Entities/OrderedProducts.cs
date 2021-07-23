@@ -8,10 +8,9 @@ namespace ShopIt.Models.Entities
 {
     public class OrderedProducts : BaseEntity<Guid>
     {
-
         public Guid OrderId { get; set; }
         [ForeignKey(nameof(OrderId))]
-        public virtual ApplicationUser Order { get; set; }
+        public virtual Order Order { get; set; }
         public Guid ProductId { get; set; }
         [ForeignKey(nameof(ProductId))]
         public virtual Product Product { get; set; }
