@@ -17,7 +17,7 @@
             <td>@category.Title</td>
             <td>
                 <form asp-action="Delete" asp-route-id="@category.Id" method="post">
-                    <a class="btn btn-sm btn-link" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
+                    <a class="btn btn-primary" asp-action="Edit" asp-route-id="@category.Id">Edit</a>
                     <button type="submit" class="btn btn-sm btn-danger">
                         Delete
                     </button>
