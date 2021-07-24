@@ -11,10 +11,15 @@ namespace ShopIt.Models.Entities
         public Guid UserId { get; set; }
         [ForeignKey(nameof(UserId))]
         public virtual ApplicationUser User { get; set; }
-        public virtual ICollection<OrderedProducts> OrderedProducts { get; set; }
+
+        public int StatusId { get; set; }
+        [ForeignKey(nameof(StatusId))]
+        public virtual Status Status { get; set; }
+
+        public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
         public Order()
         {
-            OrderedProducts = new List<OrderedProducts>();
+            OrderedProducts = new List<OrderedProduct>();
         }
     }
 }
