@@ -340,3 +340,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /.vs/ShopIt/v16/.suo
+/ShopIt/wwwroot/Images/
