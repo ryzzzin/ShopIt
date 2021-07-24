@@ -13,10 +13,11 @@ namespace ShopIt.Contexts
         {
 
         }
-        public virtual DbSet<AddedProducts> Basket { get; set; }
+        public virtual DbSet<AddedProduct> Cart { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderedProducts> OrderedProducts { get; set; }
+        public virtual DbSet<OrderedProduct> OrderedProducts { get; set; }
+        public virtual DbSet<Status> Statuses { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<UserPic> UserPics { get; set; }
