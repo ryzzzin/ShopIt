@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ShopIt.Models.Entities.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<a asp-action="Create" class="btn btn-link">Create new product</a>
+
+<table class="table">
+    <tr>
+        <th>Products</th>
+        <th></th>
+    </tr>
+    @foreach (var product in Model)
+    {
+        <tr>
+            <td>@product.Title</td>
+            <td>
+                <form asp-controller="Cart" asp-action="Create" asp-route-productId="@product.Id"  method="post">
+                    <input type="number" name="quantity" class="form-control">
+                    <input type="submit" value="Add to Cart" class="btn btn-sm btn-secondary">
+                </form>
+                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@product.Id">Edit</a>
+                <form asp-action="Delete" asp-route-id="@product.Id" method="post">
+                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
