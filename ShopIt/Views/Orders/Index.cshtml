@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ShopIt.Models.Entities.Order>
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<div>
+    <a asp-action="Create" class="btn btn-link">Create new order</a>
+</div>
+<label class="control-label">Orders</label>
+<table class="table">
+    <tr>
+        <th>Status</th>
+        <th>UserEmail</th>
+        <th>ProductsCount</th>
+    </tr>
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>@order.Status.Title</td>
+            <td>@order.User.Email</td>
+            <td>@order.OrderedProducts.Count()</td>
+            <td>
+                <form asp-action="Delete" asp-route-id="@order.Id" method="post">
+                    <a class="btn btn-sm btn-link" asp-action="Edit" asp-route-id="@order.Id">Edit</a>
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
