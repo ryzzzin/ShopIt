@@ -12,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace ShopIt.Controllers
 {
     [Authorize]
@@ -25,9 +26,9 @@ namespace ShopIt.Controllers
         {
             _context = context;
             _userManager = userManager;
-            _path= Path.Combine(Environment.CurrentDirectory, "Images");
+            _path= Path.Combine("~", "Images");
         }
-
+        
         public async Task<IActionResult> Index(ShowImageRequest model)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -38,6 +39,7 @@ namespace ShopIt.Controllers
                 model.Path = userPic.FirstOrDefault().Path;
                 return View(model);
             }
+            
             model.Path ="Default.png";
             return View(model);
             
