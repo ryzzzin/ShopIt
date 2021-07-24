@@ -13,7 +13,7 @@ namespace ShopIt.Models.Entities
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
         [Range(0, int.MaxValue, ErrorMessage = "Quantity should be more than 0")]
-        public int Quantity { get; set; }
+        public int Stock { get; set; }
         public int CategoryId { get; set; }
         [ForeignKey(nameof(CategoryId))]
         public virtual Category Category { get; set; }
