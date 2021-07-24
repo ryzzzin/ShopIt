@@ -1,14 +1,22 @@
-﻿@model ShopIt.Models.AdminModels.ShowImageRequest
-
-<img src=@($"{Environment.CurrentDirectory}/Images/{Model.Path}")/> 
+﻿
+@model ShopIt.Models.AdminModels.ShowImageRequest
+@{ var imagePath = "";
+    if (Model.Path != null)
+    {
+        imagePath = "/Images/" + Model.Path;
+    }
+}
+<div>
+    <img src="@imagePath" width="100px" height="100px" alt="Alternate Text" />
+</div>
 <h2> Basic File Upload</h2>
 @using (Html.BeginForm("EditProfilePicture",
-                       "Profile",
-                       FormMethod.Post,
-                       new { enctype = "multipart/form-data" }))
+                    "Profile",
+                    FormMethod.Post,
+                    new { enctype = "multipart/form-data" }))
 {
     <label for="file">Upload Image:</label>
-    <input type="file" name="file" id="file" />
+    <input type="file" required="image" accept="image/png, image/jpeg" name="file" id="file" />
     <br>
     <br>
 
