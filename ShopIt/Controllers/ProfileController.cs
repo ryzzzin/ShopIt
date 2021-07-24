@@ -26,7 +26,7 @@ namespace ShopIt.Controllers
         {
             _context = context;
             _userManager = userManager;
-            _path= Path.Combine("~", "Images");
+            _path =Path.Combine("wwwroot", "Images");
         }
         
         public async Task<IActionResult> Index(ShowImageRequest model)
@@ -51,8 +51,7 @@ namespace ShopIt.Controllers
                 try
                 {
                     string fileName = string.Format(@"{0}.png", Guid.NewGuid());
-                    string path;
-                    path= Path.Combine(_path, fileName);
+                    string path= Path.Combine(_path, fileName);
                     using (Stream fileStream = new FileStream(path, FileMode.Create))
                     {
                         await file.CopyToAsync(fileStream);

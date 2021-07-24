@@ -7,7 +7,7 @@
     }
 }
 <div>
-    <img src="@imagePath" width="100px" height="50px" alt="Alternate Text" />
+    <img src="@imagePath" width="100px" height="100px" alt="Alternate Text" />
 </div>
 <h2> Basic File Upload</h2>
 @using (Html.BeginForm("EditProfilePicture",
@@ -16,7 +16,7 @@
                     new { enctype = "multipart/form-data" }))
 {
     <label for="file">Upload Image:</label>
-    <input type="file" name="file" id="file" />
+    <input type="file" required="image" accept="image/png, image/jpeg" name="file" id="file" />
     <br>
     <br>
 
