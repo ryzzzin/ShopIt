@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShopIt.Models.Entities
 {
-    public class OrderedProducts : BaseEntity<Guid>
+    public class OrderedProduct : BaseEntity<Guid>
     {
         public Guid OrderId { get; set; }
         [ForeignKey(nameof(OrderId))]
