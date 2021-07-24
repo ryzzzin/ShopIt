@@ -12,10 +12,10 @@ namespace ShopIt.Models.AdminModels
         public string Title { get; set; }
         [Required(ErrorMessage = "Price field is required")]
         public decimal Price { get; set; }
-        [Required(ErrorMessage = "Quantity field is required")]
-        public int Quantity { get; set; }
+        [Required(ErrorMessage = "Stock field is required")]
+        public int Stock { get; set; }
         [Required(ErrorMessage = "CategoryId field is required")]
-        public Guid CategoryId { get; set; }
+        public int CategoryId { get; set; }
         [Required(ErrorMessage = "Description field is required")]
         public string Description { get; set; }
     }
