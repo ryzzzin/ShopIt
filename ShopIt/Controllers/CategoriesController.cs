@@ -41,7 +41,6 @@ namespace ShopIt.Controllers
                 var category = new Category
                 {
                     Title = model.Title,
-                    Products = _context.Products.ToList(),
                     CreatedAt = DateTime.Now,
                     CreatedBy = User.Identity.Name,
                     ModifiedAt = DateTime.Now,
