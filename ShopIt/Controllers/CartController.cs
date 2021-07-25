@@ -40,14 +40,13 @@ namespace ShopIt.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Guid productId, int quantity)
+        public async Task<IActionResult> Create(CreateAddedProductRequest model)
         {
-            var user = await _userManager.GetUserAsync(User);
             var addedProduct = new AddedProduct
             {
-                UserId = user.Id,
-                ProductId = productId,
-                Quantity = quantity,
+                UserId = model.UserId,
+                ProductId = model.ProductId,
+                Quantity = model.Quantity,
                 CreatedAt = DateTime.Now,
                 CreatedBy = User.Identity.Name,
                 ModifiedAt = DateTime.Now,
@@ -59,7 +58,20 @@ namespace ShopIt.Controllers
             return RedirectToAction("Index", "Cart");
         }
 
-        [HttpGet]
+        [HttpPost]
+        public async Task<IActionResult> AddToCart(Guid productId, int quantity)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var model = new CreateAddedProductRequest
+            {
+                UserId = user.Id,
+                ProductId = productId,
+                Quantity = quantity
+            };
+            return await Create(model);
+        }
+
+            [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
             var addedProduct = _context.Categories.SingleOrDefault(x => x.Id == id);
